@@ -1,6 +1,6 @@
 <?php 
 //Thong tin website 
-define('SITE_URL','https://localhost:8080/');
+define('SITE_URL','http://localhost:8080/Website/');
 //Thong tin cau hinh DB 
 define('DB_SERVER','localhost');
 define('DB_USERNAME','root');

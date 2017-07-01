@@ -18,23 +18,23 @@
 </p>
 <p>
 <label>Mật khẩu:</label>
-<input type="password" name="password" value="" />
+<input type="password" name="password" required value="" />
 </p>
 <p>
 <label>Họ tên:</label>
-<input type="text" name="name" value="" />
+<input type="text" name="name" required value="" />
 </p>
 <p>
 <label>Email:</label>
-<input type="text" name="email" value="" />
+<input type="text" name="email" required value="" />
 </p>
 <p>
 <label>Trạng thái:</label>
-<input type="checkbox" name="status" value="1" />
+<input type="checkbox" name="status" required value="1" />
 </p>
     <p> 
     <label>Phone:</label>
-<input type="text" name="phone" value="" />   
+<input type="text" name="phone" required value="" />   
     </p>
 <p>
 <input type="submit" value="Thêm mới" />

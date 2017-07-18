@@ -5,7 +5,17 @@
 <title>Quản trị - Sản phẩm - Chỉnh sửa</title>
 </head>
 <body>
-
+<?php require '/../css/header.css';?>
+      <header>
+        <div class="logo">
+           <a href="<?php echo SITE_URL . 'admin/home.php'; ?>"><h1><span class="blue-bold">MT </span>- PEE</h1></a>
+        </div>
+        <div class="main-nav">
+          <nav>
+             <?php require '/../common/menu.tpl.php'; ?>
+        </nav>
+        </div>
+      </header>
 <form name="edit" method="POST" enctype="multipart/form-data" action="">
 <?php if(isset($_SESSION['success'])): ?>
 <p style="color:green;">Sản phẩm đã được chỉnh sửa thành công!</p>
@@ -44,6 +54,6 @@
 <input type="submit" value="Chỉnh sửa" />
 </p>
 </form>
-
+ <div id="footer">&copy;2017 Group E All Right</div>
 </body>
 </html>

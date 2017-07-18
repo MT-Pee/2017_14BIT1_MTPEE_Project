@@ -19,7 +19,7 @@ $data = array (
 if(edit_category($data,$category_id))
 {
 $_SESSION['success'] = true; 
-header('location:edit.php?category_id='.$category_id);
+header('location:edit.php?id='.$category_id);
 }
 }
 $category = get_category_by_id($category_id);

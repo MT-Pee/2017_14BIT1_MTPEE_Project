@@ -7,14 +7,14 @@ if (!isset($_SESSION ['user'])){
     header("location:login.php");
 }
 
-require '../../configs/config.php';
-require '../../libraries/connect.php';
-require '../../models/user.php';
+require '/../configs/config.php';
+require '/../libraries/connect.php';
+require '/../models/user.php';
 
 
 //lay danh sach thanh vien
-$user_list = get_user_list();
 
-require '../../views/admin/list.tpl.php';
+
+require '/../views/admin/home.tpl.php';
 
 ?>

@@ -30,7 +30,7 @@ header('location:edit.php?id='.$user_id);
 }
 $user = get_user_by_id($user_id);
 
-require 'C:/wamp64/www/Website/views/admin/edit.tpl.php';
+require '../../views/admin/edit.tpl.php';
 
 
   

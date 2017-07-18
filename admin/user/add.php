@@ -10,9 +10,9 @@ if (!isset($_SESSION['user'])){
 }
 
 //require 
-require 'C:/wamp64/www/Website/configs/config.php';
-require 'C:/wamp64/www/Website/libraries/connect.php';
-require 'C:/wamp64/www/Website/models/user.php';
+require '../../configs/config.php';
+require '../../libraries/connect.php';
+require '../../models/user.php';
 
 if($_POST) {
 $data = array ( 
@@ -35,5 +35,5 @@ header("location:add.php");
 }
 }
 
-require 'C:/wamp64/www/Website/views/admin/add.tpl.php';
+require '../../views/admin/add.tpl.php';
 ?>

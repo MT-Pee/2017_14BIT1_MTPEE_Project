@@ -4,7 +4,17 @@
 <title>Quản trị - Danh mục sản phẩm - Danh sách</title>
 </head>
 <body>
-
+<?php require '/../css/header.css';?>
+      <header>
+        <div class="logo">
+           <a href="<?php echo SITE_URL . 'admin/home.php'; ?>"><h1><span class="blue-bold">MT </span>- PEE</h1></a>
+        </div>
+        <div class="main-nav">
+          <nav>
+             <?php require '/../common/menu.tpl.php'; ?>
+        </nav>
+        </div>
+      </header>
 <table width="100%" cellpadding="20">
 <tr>
 <th>ID</th>
@@ -15,13 +25,13 @@
 </tr>
 <?php while($category = mysqli_fetch_assoc($category_list)): ?>
 <tr>
-<td><?php echo $category['id']; ?></td>
-<td><a href="<?php echo SITE_URL . 'admin/category/edit.php?id=' . $category['id']; ?>"><?php echo $category['name']; ?></a></td>
-<td><?php echo ($category['status'] == 1) ? 'Kích hoạt' : 'Không kích hoạt'; ?></td>
-<td><a href="<?php echo SITE_URL . 'admin/category/delete.php?id=' . $category['id']; ?>">Xóa</a></td>
+<th><?php echo $category['id']; ?></th>
+<th><a href="<?php echo SITE_URL . 'admin/category/edit.php?id=' . $category['id']; ?>"><?php echo $category['name']; ?></a></th>
+<th><?php echo ($category['status'] == 1) ? 'Kích hoạt' : 'Không kích hoạt'; ?></th>
+<th><a href="<?php echo SITE_URL . 'admin/category/delete.php?id=' . $category['id']; ?>">Xóa</a></th>
 </tr>
 <?php endwhile; ?>
 </table>
-
+ <div id="footer">&copy;2017 Group E All Right</div>
 </body>
 </html>

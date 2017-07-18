@@ -8,10 +8,9 @@ session_start();
 //}
 
 //require 
-require 'C:/wamp64/www/Website/configs/config.php';
-require 'C:/wamp64/www/Website/libraries/connect.php';
-require 'C:/wamp64/www/Website/models/user.php';
-
+require '../../configs/config.php';
+require '../../libraries/connect.php';
+require '../../models/user.php';
 //kiem tra du lieu post len 
 if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])){
 //gan tai khoan va mk nhan duoc tu form vao 2 bien duoi day
@@ -27,13 +26,14 @@ if($user && $user['password'] === md5($password)){
 $_SESSION['user'] = $user;
 
 //quay ve trang admin 
-//header('location:../home/home.php');
-echo "thanh cong";
+header('location:../home.php');
+echo "Tai Khoan Dang Nhap Thanh Cong";
 }else{
 $error = true;    
 }
 }
 
 //require file giao dien (view)
-require 'C:/wamp64/www/Website/views/admin/login.tpl.php';
+require '../../views/admin/login.tpl.php';
+
 ?>

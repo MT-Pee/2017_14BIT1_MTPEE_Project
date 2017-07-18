@@ -2,10 +2,10 @@
 -- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 02, 2017 at 01:13 AM
--- Server version: 5.7.14
--- PHP Version: 5.6.25
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th7 17, 2017 lúc 05:03 CH
+-- Phiên bản máy phục vụ: 5.7.14
+-- Phiên bản PHP: 7.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pm`
+-- Cơ sở dữ liệu: `web`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Cấu trúc bảng cho bảng `admin`
 --
 
 CREATE TABLE `admin` (
@@ -36,7 +36,7 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Cấu trúc bảng cho bảng `category`
 --
 
 CREATE TABLE `category` (
@@ -48,7 +48,7 @@ CREATE TABLE `category` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedback`
+-- Cấu trúc bảng cho bảng `feedback`
 --
 
 CREATE TABLE `feedback` (
@@ -59,7 +59,7 @@ CREATE TABLE `feedback` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Cấu trúc bảng cho bảng `order`
 --
 
 CREATE TABLE `order` (
@@ -75,7 +75,7 @@ CREATE TABLE `order` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Cấu trúc bảng cho bảng `product`
 --
 
 CREATE TABLE `product` (
@@ -94,7 +94,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `product`
+-- Đang đổ dữ liệu cho bảng `product`
 --
 
 INSERT INTO `product` (`id`, `category_id`, `name`, `price`, `size`, `size1`, `size2`, `detail`, `long-detail`, `image`, `status`, `quantity`) VALUES
@@ -112,7 +112,7 @@ INSERT INTO `product` (`id`, `category_id`, `name`, `price`, `size`, `size1`, `s
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaction`
+-- Cấu trúc bảng cho bảng `transaction`
 --
 
 CREATE TABLE `transaction` (
@@ -130,7 +130,7 @@ CREATE TABLE `transaction` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Cấu trúc bảng cho bảng `user`
 --
 
 CREATE TABLE `user` (
@@ -144,48 +144,82 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Indexes for dumped tables
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `name`, `status`, `email`, `phone`) VALUES
+(1, 'asa', 'c4ca4238a0b923820dcc509a6f75849b', 'a', 1, 'a', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `user1`
+--
+
+CREATE TABLE `user1` (
+  `id` int(69) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `user1`
+--
+
+INSERT INTO `user1` (`id`, `firstname`, `lastname`, `password`, `status`, `email`) VALUES
+(1000, 'a', 'v', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'av'),
+(1001, 'q', 'b', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'ab'),
+(1004, 'as', 'as', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'asas'),
+(1009, 'asss', 'ass', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'assasasasas'),
+(1010, 'zx', 'zx', '6512bd43d9caa6e02c990b0a82652dca', 1, 'zx'),
+(1013, 'z', 'z', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'zz');
+
+--
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `admin`
+-- Chỉ mục cho bảng `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- Indexes for table `category`
+-- Chỉ mục cho bảng `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `feedback`
+-- Chỉ mục cho bảng `feedback`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`feedback_id`);
 
 --
--- Indexes for table `order`
+-- Chỉ mục cho bảng `order`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `product`
+-- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `transaction`
+-- Chỉ mục cho bảng `transaction`
 --
 ALTER TABLE `transaction`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
@@ -193,44 +227,58 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Chỉ mục cho bảng `user1`
+--
+ALTER TABLE `user1`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `firstname` (`firstname`),
+  ADD UNIQUE KEY `lastname` (`lastname`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT cho bảng `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `category`
+-- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `feedback`
+-- AUTO_INCREMENT cho bảng `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `feedback_id` int(225) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT cho bảng `order`
 --
 ALTER TABLE `order`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT for table `transaction`
+-- AUTO_INCREMENT cho bảng `transaction`
 --
 ALTER TABLE `transaction`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(69) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(69) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT cho bảng `user1`
+--
+ALTER TABLE `user1`
+  MODIFY `id` int(69) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1014;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

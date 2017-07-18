@@ -47,78 +47,76 @@
         });
      </script>
 </head>
-<!-- start search-->
-<div class="search-box">
-<div id="sb-search" class="sb-search">
-  <form action="search.php" method="get">
-    <input class="sb-search-input" placeholder="Enter your search term..." type="text" name="search"/>
-    <input class="sb-search-submit" type="submit" name="submit" value="search"/>
-    <span class="sb-icon-search"> </span>
-  </form>
-</div>
-</div>
+<!--header-->
 <?php
-          //Nếu người dùng submit form thì thực hiện
-          if (isset($_REQUEST['submit']))
-          {
-           // Gán hàm addslashes để chống sql injection
-           $search = addslashes($_GET['search']);
-
-           // Nếu $search rỗng thì báo lỗi, tức là người dùng chưa nhập liệu mà đã nhấn submit.
-           if (empty($search)) {
-               echo "Yeu cau nhap du lieu vao o trong";
-           }
-           else
+include("header.php");
+ ?>
+ <div class="container">
+   <div class="main">
+ <?php
+           //Nếu người dùng submit form thì thực hiện
+           if (isset($_REQUEST['submit']))
            {
-               // Dùng câu lênh like trong sql và sứ dụng toán tử % của php để tìm kiếm dữ liệu chính xác hơn.
-               $query = "select * from product where name like '%$search%'";
+            // Gán hàm addslashes để chống sql injection
+            $search = addslashes($_GET['search']);
 
-               // Kết nối sql
-                include("/connect.php");
+            // Nếu $search rỗng thì báo lỗi, tức là người dùng chưa nhập liệu mà đã nhấn submit.
+            if (empty($search)) {
+                echo "Yeu cau nhap du lieu vao o trong";
+            }
+            else
+            {
+                // Dùng câu lênh like trong sql và sứ dụng toán tử % của php để tìm kiếm dữ liệu chính xác hơn.
+                $query = "select * from product where name like '%$search%'";
 
-               // Thực thi câu truy vấn
-               $sql = mysqli_query($conn,$query);
+                // Kết nối sql
+                 include("/connect.php");
 
-               // Đếm số đong trả về trong sql.
-               $num = mysqli_num_rows($sql);
+                // Thực thi câu truy vấn
+                $sql = mysqli_query($conn,$query);
 
-               // Nếu có kết quả thì hiển thị, ngược lại thì thông báo không tìm thấy kết quả
-               if ($num > 0 && $search != "")
-               {
-                   // Dùng $num để đếm số dòng trả về.
-                   echo "$num Result for Search: <b>$search</b>";
+                // Đếm số đong trả về trong sql.
+                $num = mysqli_num_rows($sql);
 
-                   // Vòng lặp while & mysql_fetch_assoc dùng để lấy toàn bộ dữ liệu có trong table và trả về dữ liệu ở dạng array.
-                   while ($row = mysqli_fetch_array($sql)){?>
-                                     <div class="main">
-                                        <div class="col-md-3 shop_box"><a href="product-detail.php?id=<?php echo $row["id"]?>">
-                                          <img src="<?php echo $row["image"]?>" class="img-responsive" alt=""/>
-                                          <span class="sale-box">
-                                            <span class="sale-label"><?php if($row["status"] == 1) echo "New"; else echo""?></span>
-                                          </span>
-                                          <div class="shop_desc">
-                                            <h3><a href="#"><?php echo $row["name"] ?></a></h3>
-                                            <p><?php echo $row["detail"] ?> </p>
-                                            <span class="actual"><?php echo $row["price"]?></span><br>
-                                            <ul class="buttons">
-                                              <li class="shop_btn"><a href="product-detail.php?id=<?php echo $row["id"]?>">Buy Now</a></li>
-                                              </ul>
-                                              <div class="clear"> </div>
-                                            </div>
-                                        </div>
-                                      </div>
-                                   <?php }
+                // Nếu có kết quả thì hiển thị, ngược lại thì thông báo không tìm thấy kết quả
+                if ($num > 0 && $search != "")
+                {
+                    // Dùng $num để đếm số dòng trả về.
+                    echo "$num Result for Search: <b>$search</b>";
+
+                    // Vòng lặp while & mysql_fetch_assoc dùng để lấy toàn bộ dữ liệu có trong table và trả về dữ liệu ở dạng array.
+                    while ($row = mysqli_fetch_array($sql)){?>
+                                      <div class="main">
+                                         <div class="col-md-3 shop_box"><a href="product-detail.php?id=<?php echo $row["id"]?>">
+                                           <img src="<?php echo $row["image"]?>" class="img-responsive" alt=""/>
+                                           <span class="sale-box">
+                                             <span class="sale-label"><?php if($row["status"] == 1) echo "New"; else echo""?></span>
+                                           </span>
+                                           <div class="shop_desc">
+                                             <h3><a href="#"><?php echo $row["name"] ?></a></h3>
+                                             <p><?php echo $row["detail"] ?> </p>
+                                             <span class="actual"><?php echo $row["price"]?></span><br>
+                                             <ul class="buttons">
+                                               <li class="shop_btn"><a href="product-detail.php?id=<?php echo $row["id"]?>">Buy Now</a></li>
+                                               </ul>
+                                               <div class="clear"> </div>
+                                             </div>
+                                         </div>
+                                       </div>
+                                    <?php }
+                                  }
+                                  else {
+                                     echo "No Result for Search: <b>$search</b>";
                                  }
-                                 else {
-                                    echo "No Result for Search: <b>$search</b>";
                                 }
-                               }
-                             }
-                                   ?>
-<!----search-scripts---->
-<script src="js/classie.js"></script>
-<script src="js/uisearch.js"></script>
-<script>
-new UISearch( document.getElementById( 'sb-search' ) );
-</script>
+                              }
+                                    ?>
+</div>
+</div>
+<h3 class="m_3"><a href="shop.php">--Shopping Time--</a></h3>
+<!--footer-->
+<?php
+include("footer.php");
+ ?>
+</body>
 </html>

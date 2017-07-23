@@ -5,7 +5,8 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <?php
-include("/connect.php");
+include("addtocart.php"  );
+include("C:\wamp64\www\website2\libraries\connect.php");
 $id = $_GET["id"];
 $result = mysqli_query($conn,"SELECT * FROM `product`WHERE id = ".$id);
 $row = mysqli_fetch_array($result);
@@ -92,9 +93,9 @@ $row = mysqli_fetch_array($result);
 						    <ul class="nav" id="nav">
 						    	<li class="current"><a href="shop.php">Shop</a></li>
 						    	<li><a href="team.html">Team</a></li>
-						    	<li><a href="shop.html">Events</a></li>
+						    	<li><a href="shop.php">Events</a></li>
 						    	<li><a href="experiance.html">Experiance</a></li>
-						    	<li><a href="shop.html">Company</a></li>
+						    	<li><a href="shop.php">Company</a></li>
 								<li><a href="contact.html">Contact</a></li>
 								<div class="clear"></div>
 							</ul>
@@ -146,7 +147,10 @@ $row = mysqli_fetch_array($result);
 	    </div>
 	  </div>
     <!--product-detail-->
+
      <div class="main">
+       <form method="post" action="checkout.php?action=add&name=<?php echo $row["name"]; ?>">
+
       <div class="shop_top">
 		<div class="container">
 			<div class="row">
@@ -170,6 +174,7 @@ $row = mysqli_fetch_array($result);
 						</ul>
 					    </div>
 				        <!-- end product_slider -->
+
 				        <div class="single_right">
 				        	<h3><?php echo $row["name"] ?> </h3>
 				        	<p class="m_10"><?php echo $row["detail"] ?></p>
@@ -207,8 +212,11 @@ $row = mysqli_fetch_array($result);
 				<div class="col-md-3">
 				  <div class="box-info-product">
 					<p class="price2">VND <?php echo $row["price"] ?></p>
-					       <ul class="prosuct-qty">
-								<span>Quantity:</span>
+          <div><input type="text" name="quantity" value="1" size="2" />
+          				<input type="submit" value="Add to cart" class="btnAddAction" /></div>
+                <!-- <ul class="prosuct-qty">
+
+                <span>Quantity:</span>
 								<select>
 									<option>1</option>
 									<option>2</option>
@@ -220,7 +228,7 @@ $row = mysqli_fetch_array($result);
 							</ul>
 							<button type="submit" name="Submit" class="exclusive">
 							   <span>Add to cart</span>
-							</button>
+							</button>-->
 				   </div>
 			   </div>
 			</div>
@@ -292,7 +300,9 @@ $row = mysqli_fetch_array($result);
           </div>
         </div>
       </div>
+    </form>
     </div>
+
 <!--footer-->
 	  <div class="footer">
 			<div class="container">

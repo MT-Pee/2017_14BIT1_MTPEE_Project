@@ -21,6 +21,9 @@
 <li>
 <a href="<?php echo SITE_URL . 'admin/user/add.php'; ?>">Thêm mới thành viên</a>
 </li>
+<li>
+<a href="<?php echo SITE_URL . 'admin/feedback/list.php'; ?>">Danh sách feedback</a>
+</li>    
 <li> 
 <a href="<?php echo SITE_URL . 'admin/user/logout.php'; ?>">Đăng xuất</a>   
 </li>

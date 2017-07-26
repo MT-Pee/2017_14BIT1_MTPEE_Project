@@ -6,6 +6,8 @@
 </head>
 <body>
 <?php require '/css/header.css';?>
+<?php require '/css/footeradd.css';?>
+<?php require '/css/form.css';?>
       <header>
         <div class="logo">
           <a href="<?php echo SITE_URL . 'admin/home.php'; ?>"><h1><span class="blue-bold">MT </span>- PEE</h1></a>
@@ -23,8 +25,12 @@
    
    
     
-
-<form name="edit" method="POST" action="">
+    
+<div class="login">
+<div class="login-triangle"></div>
+  
+  <h2 class="login-header">Thêm Thành Viên</h2>
+<form class="login-container" name="edit" method="POST" action="">
 <?php if(isset($_SESSION['success'])): ?>
 <p style="color:green;">Thành viên đã được chỉnh sửa thành công!</p>
 <?php unset($_SESSION['success']); ?>
@@ -58,7 +64,8 @@
 <p>
 <input type="submit" value="Chỉnh sửa" />
 </p>
-</form>
- <div id="footer">&copy;2017 Group E All Right</div>
+    </form></div>
+ 
 </body>
+    <div class="footer">&copy;2017 Group E All Right Reserved</div>
 </html>

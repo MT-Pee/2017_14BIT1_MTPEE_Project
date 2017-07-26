@@ -28,6 +28,7 @@ text-decoration: none;
 color: #323232;
 }
 .logo {
+    
 padding:20px;
 float:left;
 }
@@ -39,4 +40,11 @@ nav ul li {
   display:inline-block;
   padding: 5px;
 }
+
+   body{
+margin:0px ;
+background-image: url("https://www.walldevil.com/wallpapers/a77/reportadmin-pictures-background-computer.jpg");
+background-size: cover;
+}
+
 </style>

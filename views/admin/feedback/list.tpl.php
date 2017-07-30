@@ -1,9 +1,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Quản trị - Danh mục sản phẩm - Danh sách</title>
+<title>Quản trị - Thành viên - Danh sách</title>
 </head>
 <body>
+
 <?php require '/../css/header.css';?>
 <?php require '/../css/footer.css';?>
 <?php require '/../css/table.css';?>
@@ -17,27 +18,31 @@
         </nav>
         </div>
       </header>
+<body>
+
+
+   
+   
+   
 <table>
 <thead>
 <tr>
 <th>ID</th>
-<th>Tên danh mục</th>
-<th>Trạng thái</th>
+<th>Nội dung</th>
 <th>Tác vụ</th>
 </tr>
 </thead>
 <tbody>
-<?php while($category = mysqli_fetch_assoc($category_list)): ?>
-
+<?php while($feedback = mysqli_fetch_assoc($feedback_list)): ?>
 <tr>
-<td><?php echo $category['id']; ?></td>
-<td><a href="<?php echo SITE_URL . 'admin/category/edit.php?id=' . $category['id']; ?>"><?php echo $category['name']; ?></a></td>
-<td><?php echo ($category['status'] == 1) ? 'Kích hoạt' : 'Không kích hoạt'; ?></td>
-<td><a href="<?php echo SITE_URL . 'admin/category/delete.php?id=' . $category['id']; ?>">Xóa</a></td>
+<td><?php echo $feedback['feedback_id']; ?></td>
+<td><?php echo $feedback['content']; ?></td>
+<td><a href="<?php echo SITE_URL . 'admin/feedback/delete.php?feedback_id=' . $feedback['feedback_id']; ?>">Xóa</a></td>
 </tr>
 <?php endwhile; ?>
     </tbody>
     </table>
-<div class="footer">&copy;2017 Group E All Right Reserved</div>
+
+ <div class="footer">&copy;2017 Group E All Right Reserved</div>
 </body>
 </html>

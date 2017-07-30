@@ -1,4 +1,4 @@
-
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -6,6 +6,8 @@
 </head>
 <body>
 <?php require '/../css/header.css';?>
+<?php require '/../css/footeradd.css';?>
+<?php require '/../css/form.css';?>    
       <header>
         <div class="logo">
             <a href="<?php echo SITE_URL . 'admin/home.php'; ?>"><h1><span class="blue-bold">MT </span>- PEE</h1></a>
@@ -23,8 +25,13 @@
    
    
     
+<div class="login">
+  <div class="login-triangle"></div>
+  
+  <h2 class="login-header">Thêm mới sản phẩm</h2>
 
-<form name="add" method="POST" enctype="multipart/form-data" action="">
+
+<form class="login-container" name="add" method="POST" enctype="multipart/form-data" action="">
 <?php if(isset($_SESSION['success'])): ?>
 <p style="color:green;">Sản phẩm đã được thêm mới thành công!</p>
 <?php unset($_SESSION['success']); ?>
@@ -39,20 +46,20 @@
 </select>
 </p>
 <p>
-<label>Tên sản phẩm:</label>
-<input type="text" name="name" required value="" />
+
+<input type="text" name="name" placeholder="name" required value="" />
 </p>
 <p>
-<label>Chi tiết:</label>
-<textarea name="detail"></textarea>
+
+<textarea name="detail" placeholder="detail" required></textarea>
 </p>
 <p>
 <label>Hình ảnh:</label>
 <input type="file" required name="image" />
 </p>
 <p>
-<label>Giá bán:</label>
-<input type="text" name="price" required value="" />
+
+<input type="text" name="price" placeholder="price" required value="" />
 </p>
 <p>
 <label>Trạng thái:</label>
@@ -61,7 +68,8 @@
 <p>
 <input type="submit" value="Thêm mới" />
 </p>
-</form>
- <div id="footer">&copy;2017 Group E All Right</div>
-</body>
+    </form></div>
+<div class="footer">&copy;2017 Group E All Right Reserved</div>
+
+    </body>
 </html>

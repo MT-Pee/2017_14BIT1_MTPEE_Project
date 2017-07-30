@@ -16,9 +16,12 @@ $data = array (
 );
 
 
-if(add_category($data))
-{
-$_SESSION['success'] = true; 
+//Thêm mới
+if(add_category($data)){
+//Tạo session để lưu cờ thông báo thành công
+$_SESSION['success'] = true;
+
+//Tải lại trang (Mục đích là để reset form)
 header('location:add.php');
 }
 }

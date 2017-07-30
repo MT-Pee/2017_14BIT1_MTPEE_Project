@@ -169,7 +169,7 @@ $(window).load(function() {
 <!--product-list-->
     <div class="container">
       <?php
-      include("/connect.php");
+      include("../../libraries/connect.php");
 // BƯỚC 1: TÌM TỔNG SỐ RECORDS
 $result = mysqli_query($conn, 'select count(id) as total from product');
 $row = mysqli_fetch_assoc($result);
@@ -193,7 +193,7 @@ else if ($current_page < 1){
  // Tìm Start
 $start = ($current_page - 1) * $limit;
       ?>
-         <?php include("/products-list.php"); ?>
+         <?php include("products-list.php"); ?>
       </div>
 <!-- -->
       <div class="features">

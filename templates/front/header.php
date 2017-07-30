@@ -63,6 +63,8 @@
 						    	<li><a href="team.php">Team</a></li>
 						    	<li><a href="galery.php">Galery</a></li>
 						    	<li><a href="shop.php">Company</a></li>
+                  <li><a href="feedback.php">Feedback</a></li>
+
 								<li><a href="contact.html">Contact</a></li>
 								<div class="clear"></div>
 							</ul>
@@ -100,8 +102,8 @@
 						  <li class="list_desc"><h4><a href="#">velit esse molestie</a></h4><span class="actual">1 x
                           $12.00</span></li>
 						  <div class="login_buttons">
-							 <div class="check_button"><a href="checkout.html">Check out</a></div>
-							 <div class="login_button"><a href="login.html">Login</a></div>
+							 <div class="check_button"><a href="checkout.php">Check out</a></div>
+							 <div class="login_button"><a href="login.php">Login</a></div>
 							 <div class="clear"></div>
 						  </div>
 						  <div class="clear"></div>
@@ -114,4 +116,3 @@
 		 </div>
 	    </div>
 	  </div>
-    </html>

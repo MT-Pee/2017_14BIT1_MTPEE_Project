@@ -4,36 +4,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<?php session_start();
-require_once("dbcontroller.php");
-$db_handle = new DBController(); ?>
 <?php
-if (!isset($_SESSION['user'])){
-
-    header("location:login.php");
-}
-
-//require
-require 'C:/wamp64/www/Website/configs/config.php';
-require 'C:/wamp64/www/Website/libraries/connect.php';
-require 'C:\wamp64\www\MTPEE_Project\2017_14BIT1_MTPEE_Project\models/user.php';
-
-if($_POST) {
-$data = array (
-'content'     => $_POST['content'],
-);
-
-//add
-if(add_fb($data)){
-
-$SESSION['success'] = true;
-
-header("C:\wamp64\www\Website\admin\user\add0.php");
-
-}
-}
-
-?>
+include('../../admin/feedback/addfb.php')
+ ?>
 
 <!DOCTYPE HTML>
 <html>

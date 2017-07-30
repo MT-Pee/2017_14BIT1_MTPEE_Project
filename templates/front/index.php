@@ -1,6 +1,6 @@
 <!--header-->
 <?php
-include("/header.php");
+include("header.php");
  ?>
 	<div class="banner">
 	<!-- start slider -->

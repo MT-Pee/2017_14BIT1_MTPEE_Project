@@ -1,6 +1,6 @@
 
 <?php
-include("/connect.php");
+include("../../libraries/connect.php");
 $result = mysqli_query($conn, "SELECT * FROM product LIMIT $start, $limit");
 while($row = mysqli_fetch_array($result)){?>
   <div class="main">

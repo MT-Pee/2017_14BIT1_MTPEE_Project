@@ -22,6 +22,11 @@ $data = array(
 'name'      => $_POST['name'],
 'price' => $_POST['price'],
 'detail' => $_POST['detail'],
+'size' => $_POST['size'],   
+'size1' => $_POST['size1'],   
+'size2' => $_POST['size2'],   
+'longdetail' => $_POST['longdetail'],  
+'quantity' => $_POST['quantity'],      
 'image' => $image,
 'status' => isset($_POST['status']) ? 1 : 0
 ); 

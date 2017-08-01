@@ -26,6 +26,12 @@ $sql = "INSERT INTO user (username,password,name,status,email,phone) VALUES ('{$
 
 return mysqli_query($conn,$sql);
 }
+function add_userweb($data){
+require '/../libraries/connect.php';
+$sql = "INSERT INTO user (username,password,name,status,email,phone) VALUES ('{$data['username']}','{$data['password']}','{$data['name']}','{$data['checkbox']}','{$data['email']}','00')";
+
+return mysqli_query($conn,$sql);
+}
 
 function get_user_by_id($user_id){
 require '/../libraries/connect.php';

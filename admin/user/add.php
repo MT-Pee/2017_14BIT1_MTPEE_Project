@@ -19,7 +19,7 @@ $data = array (
 'username' => $_POST['username'],
 'password' => md5($_POST['password']),
 'name'     => $_POST['name'],
-'status'   => $_POST['status'] ?1:0,
+'status' => isset($_POST['status']) ? 1 : 0,
 'email'    => $_POST['email'],
 'phone'    => $_POST['phone']
 );

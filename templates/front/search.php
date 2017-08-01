@@ -70,8 +70,8 @@ include("header.php");
                 $query = "select * from product where name like '%$search%'";
 
                 // Kết nối sql
-                 include("/connect.php");
-
+             include("../../libraries/connect.php");
+                include("../../configs/config.php");
                 // Thực thi câu truy vấn
                 $sql = mysqli_query($conn,$query);
 
@@ -88,7 +88,7 @@ include("header.php");
                     while ($row = mysqli_fetch_array($sql)){?>
                                       <div class="main">
                                          <div class="col-md-3 shop_box"><a href="product-detail.php?id=<?php echo $row["id"]?>">
-                                           <img src="<?php echo $row["image"]?>" class="img-responsive" alt=""/>
+                                           <img src="<?php echo SITE_URL . '/../admin/product/userfiles/' . $row["image"]?>" class="img-responsive" alt=""/>
                                            <span class="sale-box">
                                              <span class="sale-label"><?php if($row["status"] == 1) echo "New"; else echo""?></span>
                                            </span>

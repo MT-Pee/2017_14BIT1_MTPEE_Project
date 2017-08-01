@@ -1,11 +1,12 @@
 
 <?php
-include("/connect.php");
+include("../../libraries/connect.php");
+include("../../configs/config.php");
 $result = mysqli_query($conn, "SELECT * FROM product LIMIT $start, $limit");
 while($row = mysqli_fetch_array($result)){?>
   <div class="main">
      <div class="col-md-3 shop_box"><a href="product-detail.php?id=<?php echo $row["id"]?>">
-       <img src="<?php echo $row["image"]?>" class="img-responsive" alt=""/>
+       <img src="<?php echo  SITE_URL . '/../admin/product/userfiles/' . $row["image"]?>" class="img-responsive" alt=""/>
        <span class="sale-box">
          <span class="sale-label"><?php if($row["status"] == 1) echo "New"; else echo""?></span>
        </span>

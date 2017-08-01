@@ -1,16 +1,21 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Quản trị - Thành viên - Danh sách</title>
-<style>
-    body{
-    background-image: url("css/background.jpg");   
-    }
-</style>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Quản trị - Thành viên - Danh sách</title>
+ 
+
+
 </head>
-    <?php require '/css/header.css';?>
+  <?php require '/css/header.css'?>
+    <?php require '/css/header-basic.css'?>
     <?php require '/css/footer.css';?>
-      <header>
+      <header class="header-basic">
+        	<div class="header-limiter">  
         <div class="logo">
           <a href="<?php echo SITE_URL . 'admin/home.php'; ?>"><h1><span class="blue-bold">MT </span>- PEE</h1></a>
         </div>
@@ -18,7 +23,7 @@
           <nav>
              <?php require '/common/menu.tpl.php'; ?>
         </nav>
-        </div>
+                </div></div>
       </header>
 <body>
 

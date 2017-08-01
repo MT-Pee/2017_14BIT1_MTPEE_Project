@@ -1,6 +1,6 @@
 <!--header-->
 <?php
-include("/header.php");
+include("header.php");
  ?>
      <div class="main">
       <div class="shop_top">
@@ -52,5 +52,3 @@ include("/header.php");
    <?php
    include("footer.php");
     ?>
-</body>
-</html>

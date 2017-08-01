@@ -1,7 +1,14 @@
+<?php
+if(!isset($_SESSION)){
+    session_start();
+    require_once("dbcontroller.php");
+    $db_handle = new DBController();
+}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Snow Bootstrap Website Template | Home :: w3layouts</title>
+<title>MTPEE SHOP</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +22,8 @@
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/fwslider.js"></script>
 <!--end slider -->
-<script type="text/javascript">
+    <script type="text/javascript">
+
         $(document).ready(function() {
             $(".dropdown img.flag").addClass("flagvisibility");
 
@@ -48,7 +56,7 @@
      </script>
 </head>
 <body>
-  <div class="header">
+	<div class="header">
 		<div class="container">
 			<div class="row">
 			  <div class="col-md-12">
@@ -62,9 +70,9 @@
 						    	<li><a href="shop.php">Shop</a></li>
 						    	<li><a href="team.php">Team</a></li>
 						    	<li><a href="galery.php">Galery</a></li>
-						    	<li><a href="shop.php">Company</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<div class="clear"></div>
+								<li><a href="contact.php">Contact</a></li>
+                                <li><a href="feedback.php">Feedback</a></li>
+                                <div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="js/responsive-nav.js"></script>
 				    </div>
@@ -72,7 +80,7 @@
 	    	    </div>
 	            <div class="header_right">
 	    		  <!-- start search-->
-            <div class="search-box">
+				  <div class="search-box">
             <div id="sb-search" class="sb-search">
               <form action="search.php" method="get">
                 <input class="sb-search-input" placeholder="Enter your search term..." type="text" name="search"/>
@@ -81,13 +89,12 @@
               </form>
             </div>
             </div>
-            <!----search-scripts---->
-            <script src="js/classie.js"></script>
-            <script src="js/uisearch.js"></script>
-            <script>
-            new UISearch( document.getElementById( 'sb-search' ) );
-            </script>
-           <!-- Giỏ hàng -->
+						<!----search-scripts---->
+						<script src="js/classie.js"></script>
+						<script src="js/uisearch.js"></script>
+						<script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+						</script>
 				    <ul class="icon1 sub-icon1 profile_img">
 					 <li><a class="active-icon c1" href="#"> </a>
 						<ul class="sub-icon1 list">
@@ -100,18 +107,26 @@
 						  <li class="list_desc"><h4><a href="#">velit esse molestie</a></h4><span class="actual">1 x
                           $12.00</span></li>
 						  <div class="login_buttons">
-							 <div class="check_button"><a href="checkout.html">Check out</a></div>
-							 <div class="login_button"><a href="login.html">Login</a></div>
+							 <div class="check_button"><a href="checkout.php">Check out</a></div>
+                <?php
+                if(isset($_SESSION['user'])){
+                  echo '<div class="login_button"><a href="../../admin/user/logoutuser.php">Logout</a></div>';
+
+                }else {
+                  echo '<div class="login_button"><a href="login.php">Login</a></div>';
+                }
+                 ?>
+
+
 							 <div class="clear"></div>
 						  </div>
 						  <div class="clear"></div>
 						</ul>
 					 </li>
 				   </ul>
-		        <div class="clear"></div>
+		       <div class="clear"></div>
 	       </div>
 	      </div>
 		 </div>
 	    </div>
 	  </div>
-    </html>

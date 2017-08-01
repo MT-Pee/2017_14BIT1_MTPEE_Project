@@ -1,6 +1,6 @@
 <!--header-->
 <?php
-include("/header.php");
+include("header.php");
  ?>
 	<div class="banner">
 	<!-- start slider -->
@@ -203,8 +203,8 @@ include("/header.php");
 		 </div>
 	    </div>
       <!--footer-->
-		<?php
-    include("/footer.php")
-     ?>
-</body>
-</html>
+      <div class="container">
+      <?php
+      include("footer.php");
+      ?>
+    </div>

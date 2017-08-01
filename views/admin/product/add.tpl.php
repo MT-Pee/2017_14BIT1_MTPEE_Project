@@ -1,33 +1,41 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Quản trị - Sản phẩm - Thêm mới</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Quản trị - Thành viên - Danh sách</title>
+ 
+
+
 </head>
-<body>
-<?php require '/../css/header.css';?>
-<?php require '/../css/footeradd.css';?>
-<?php require '/../css/form.css';?>    
-      <header>
+  <?php require '/../css/header.css'?>
+    <?php require '/../css/header-basic.css'?>
+    <?php require '/../css/form.css'?>
+    <?php require '/../css/footeradd.css';?>
+      <header class="header-basic">
+        	<div class="header-limiter">  
         <div class="logo">
-            <a href="<?php echo SITE_URL . 'admin/home.php'; ?>"><h1><span class="blue-bold">MT </span>- PEE</h1></a>
+          <a href="<?php echo SITE_URL . 'admin/home.php'; ?>"><h1><span class="blue-bold">MT </span>- PEE</h1></a>
         </div>
         <div class="main-nav">
           <nav>
              <?php require '/../common/menu.tpl.php'; ?>
         </nav>
-        </div>
+                </div></div>
       </header>
 <body>
 
 
-   
-   
-   
-    
+
+
+
+
 <div class="login">
   <div class="login-triangle"></div>
-  
+
   <h2 class="login-header">Thêm mới sản phẩm</h2>
 
 
@@ -51,6 +59,23 @@
 </p>
 <p>
 
+<input type="text" name="size" placeholder="size" required value="" />
+</p>
+<p>
+<input type="text" name="size1" placeholder="size1" required value="" />
+</p>    
+<p>
+<input type="text" name="size2" placeholder="size2" required value="" />
+</p>    
+ <p>
+<input type="text" name="longdetail" placeholder="longdetail" required value="" />
+</p>   
+ <p>
+<input type="text" name="quantity" placeholder="quantity" required value="" />
+</p>        
+<p>
+    
+
 <textarea name="detail" placeholder="detail" required></textarea>
 </p>
 <p>
@@ -63,7 +88,7 @@
 </p>
 <p>
 <label>Trạng thái:</label>
-<input type="checkbox" name="status" required value="1" />
+<input type="checkbox" name="status"  value="1" />
 </p>
 <p>
 <input type="submit" value="Thêm mới" />

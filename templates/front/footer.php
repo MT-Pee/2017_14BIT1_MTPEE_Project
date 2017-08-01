@@ -1,5 +1,4 @@
-<!DOCTYPE HTML>
-<html>
+
 <div class="footer">
   <div class="container">
     <div class="row">
@@ -20,7 +19,7 @@
       <div class="col-md-3">
         <ul class="footer_box">
           <h4>Customer Support</h4>
-          <li><a href="#">Contact Us</a></li>          
+          <li><a href="#">Contact Us</a></li>
         </ul>
       </div>
       <div class="col-md-3">

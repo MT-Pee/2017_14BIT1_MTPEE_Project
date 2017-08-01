@@ -1,4 +1,4 @@
-<?php 
+<?php
 function get_feedback_list()
 {
 require '/../libraries/connect.php';
@@ -11,6 +11,14 @@ function delete_feedback($feedback_id)
 require '/../libraries/connect.php';
 $sql = "DELETE FROM feedback WHERE feedback_id='$feedback_id'";
 $query= mysqli_query($conn,$sql);
-return mysqli_fetch_assoc($query);    
+return mysqli_fetch_assoc($query);
 }
+
+function add_fb($data){
+require '/../libraries/connect.php';
+$sql = "INSERT INTO feedback (content) VALUES ('{$data['content']}')";
+
+return mysqli_query($conn,$sql);
+}
+
 ?>

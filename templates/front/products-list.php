@@ -1,7 +1,10 @@
 
 <?php
 include("../../libraries/connect.php");
+<<<<<<< HEAD
 include("../../configs/config.php");
+=======
+>>>>>>> c33bcd7bebcfd50f57e974f80e417e0b9722dcc6
 $result = mysqli_query($conn, "SELECT * FROM product LIMIT $start, $limit");
 while($row = mysqli_fetch_array($result)){?>
   <div class="main">
